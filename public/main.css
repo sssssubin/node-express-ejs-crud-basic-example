@@ -1,0 +1,271 @@
+/* 기본 스타일 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 전체 배경과 기본 텍스트 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* 헤더 스타일링 */
+header {
+  background: #333;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* 컨테이너 스타일링 */
+.container {
+  width: calc(100% - 36px);
+  max-width: 800px;
+  margin: 18px auto 82px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일링 */
+.container h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+}
+
+/* 폼 스타일링 */
+form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #555;
+}
+
+/* 리스트 스타일링 */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li form {
+  margin: 0;
+}
+
+li form button {
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+/* 개별 아이템 스타일링 */
+.front {
+  background: #f9dada;
+}
+
+.back {
+  background: #d9f9da;
+}
+
+.full {
+  background: #d9d9f9;
+}
+
+/* 푸터 스타일링 */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* 작업 추가 폼 스타일링 */
+.task-form {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-form input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-form button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #218838;
+}
+
+/* 작업 목록 스타일링 */
+.task-list {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-list ul {
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.task-list .delete-form {
+  margin: 0;
+}
+
+/* 사용자 목록 스타일링 */
+.user-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-list ul {
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.user-info p {
+  margin: 0;
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+}
+
+.task-list li:last-child,
+.user-item:last-child {
+  border-bottom: none;
+}
+
+/* 폼 스타일링 */
+.base-form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* 결과 표시 및 About 페이지 스타일링 */
+.result,
+.about {
+  width: calc(100% - 40px);
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.result p,
+.about h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.result strong {
+  font-weight: bold;
+}
