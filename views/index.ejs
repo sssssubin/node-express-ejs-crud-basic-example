@@ -1,54 +1,73 @@
-<div class="container">
-  <h1>할 일 목록</h1>
+<!-- 할 일 추가 폼 -->
+<section class="card">
+  <h2 class="card--title--main">할 일 추가하기</h2>
+  <form action="/addTask" method="post" class="form--search col">
+    <input
+      type="text"
+      name="newTask"
+      class="input"
+      placeholder="할일 목록을 추가해주세요"
+      required
+    />
+    <button type="submit" class="btn btn--primary btn--add">추가하기</button>
+  </form>
+</section>
 
-  <!-- 할 일 추가 폼 -->
-  <section class="task-form">
-    <h3>할 일 추가하기</h3>
-    <form action="/addTask" method="post">
-      <input
-        type="text"
-        name="newTask"
-        placeholder="할일 목록을 추가해주세요"
-        required
-      />
-      <button type="submit">추가하기</button>
-    </form>
-  </section>
+<!-- 할 일 목록 -->
+<section class="card <%= tasks.length > 0 ? 'show' : 'hide'%>">
+  <h4 class="card--title--sub">현재 할 일 목록</h4>
+  <ul class="table">
+    <% tasks.forEach(task => { %>
+    <li class="tr">
+      <span class="td"><%= task %></span>
+      <form class="td" action="/deleteTask" method="post">
+        <input type="hidden" name="task" value="<%= task %>" />
+        <button type="submit" class="btn btn--primary btn--remove">
+          <i class="fas fa-trash-alt">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.87414 7.61505C3.80712 6.74386 4.49595 6 5.36971 6H12.63C13.5039 6 14.1927 6.74385 14.1257 7.61505L13.6064 14.365C13.5463 15.1465 12.8946 15.75 12.1108 15.75H5.88894C5.10514 15.75 4.45348 15.1465 4.39336 14.365L3.87414 7.61505Z"
+                stroke="#CDCDCD"
+              />
+              <path
+                d="M14.625 3.75H3.375"
+                stroke="#CDCDCD"
+                stroke-linecap="round"
+              />
+              <path
+                d="M7.5 2.25C7.5 1.83579 7.83577 1.5 8.25 1.5H9.75C10.1642 1.5 10.5 1.83579 10.5 2.25V3.75H7.5V2.25Z"
+                stroke="#CDCDCD"
+              />
+              <path d="M10.5 9V12.75" stroke="#CDCDCD" stroke-linecap="round" />
+              <path d="M7.5 9V12.75" stroke="#CDCDCD" stroke-linecap="round" />
+            </svg>
+          </i>
+        </button>
+      </form>
+    </li>
+    <% }); %>
+  </ul>
+</section>
 
-  <!-- 할 일 목록 -->
-  <section class="task-list">
-    <h3>현재 할 일 목록</h3>
-    <ul>
-      <% tasks.forEach(task => { %>
-      <li>
-        <span class="task-item"><%= task %></span>
-        <form action="/deleteTask" method="post" class="delete-form">
-          <input type="hidden" name="task" value="<%= task %>" />
-          <button type="submit">지우기</button>
-        </form>
-      </li>
-      <% }); %>
-    </ul>
-  </section>
-
-  <hr />
-
-  <!-- 사용자 목록 조회 -->
-  <section class="user-list">
-    <h2>사용자 목록 조회</h2>
-    <ul>
-      <% users2.forEach((person, idx) => { %>
-      <li class="user-item">
-        <div class="user-info">
-          <p><strong>이름:</strong> <%= person.name %></p>
-          <p><strong>나이:</strong> <%= person.age %></p>
-          <p><strong>역할:</strong> <%= person.role %></p>
-        </div>
-        <div class="user-status">
-          <span><%= person.age > 18 ? 'Pass' : 'Reject' %></span>
-        </div>
-      </li>
-      <% }) %>
-    </ul>
-  </section>
-</div>
+<!-- 사용자 목록 조회 -->
+<section class="card">
+  <h2 class="card--title--main">사용자 목록 조회</h2>
+  <ul class="table">
+    <% users2.forEach((person, idx) => { %>
+    <li class="tr">
+      <p class="td"><strong>이름:</strong> <%= person.name %></p>
+      <p class="td"><strong>나이:</strong> <%= person.age %></p>
+      <p class="td"><strong>역할:</strong> <%= person.role %></p>
+      <p class="badge badge--<%= person.age > 18 ? 'pass' : 'reject' %>">
+        <%= person.age > 18 ? 'Pass' : 'Reject' %>
+      </p>
+    </li>
+    <% }) %>
+  </ul>
+</section>

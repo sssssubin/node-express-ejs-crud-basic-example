@@ -1,11 +1,14 @@
-<form action="/submit" method="post" class="base-form">
-  <div class="form-group">
-    <label for="name">이름:</label>
-    <input type="text" id="name" name="name" required />
-  </div>
-  <div class="form-group">
-    <label for="email">이메일:</label>
-    <input type="email" id="email" name="email" required />
-  </div>
-  <button type="submit">제출</button>
-</form>
+<div class="card">
+  <h2 class="card--title--main">Form</h2>
+  <form action="/submit" method="post" class="form--general row-group">
+    <div class="form-group row">
+      <label for="name" class="label">이름:</label>
+      <input type="text" id="name" class="input" name="name" required />
+    </div>
+    <div class="form-group row">
+      <label for="email" class="label">이메일:</label>
+      <input type="email" id="email" class="input" name="email" required />
+    </div>
+    <button type="submit" class="btn btn--primary btn--submit">제출</button>
+  </form>
+</div>
