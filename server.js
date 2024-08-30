@@ -8,13 +8,12 @@ const app = express();
 // EJS 템플릿 엔진 설정
 app.set("view engine", "ejs"); // 템플릿 엔진으로 EJS 사용
 app.set("views", path.join(__dirname, "views")); // EJS 템플릿 파일이 위치한 디렉토리 설정
+app.set("layout", "layout"); // 기본 레이아웃 설정
 
 // 미들웨어 설정
 app.use(expressLayouts); // EJS 레이아웃 사용
-app.use(express.static("public")); // 정적 파일 제공
 app.use(express.urlencoded({ extended: true })); // URL 인코딩된 데이터 파싱
-
-app.set("layout", "layout"); // 기본 레이아웃 설정
+app.use(express.static(path.join(__dirname, "public")));
 
 // 예제 사용자 데이터
 const users2 = [
@@ -67,6 +66,8 @@ app.post("/deleteTask", (req, res) => {
 });
 
 // 서버 시작
-app.listen(3000, () => {
-  console.log("서버연결 http://localhost:3000"); // 서버 시작 메시지
-});
+// app.listen(3000, () => {
+//   console.log("서버연결 http://localhost:3000"); // 서버 시작 메시지
+// });
+
+module.exports = app;
