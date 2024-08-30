@@ -1,11 +1,11 @@
-# express-ejs-basic-crud-template
+# node-express-ejs-crud-basic-example
 
-이 프로젝트는 Node.js와 Express를 기반으로 하는 기본적인 웹 애플리케이션 템플릿입니다. EJS(Embedded JavaScript) 템플릿 엔진을 사용하여 서버 사이드 렌더링을 지원하며, 사용자 목록 조회와 작업 목록을 추가, 삭제할 수 있는 기본적인 CRUD(생성, 읽기, 업데이트, 삭제) 기능을 구현합니다.
+이 프로젝트는 Node.js 환경에서 Express와 EJS(Embedded JavaScript)를 사용하여 웹 애플리케이션을 개발하기 위한 기본 템플릿입니다. EJS 템플릿 엔진을 사용하여 서버 사이드 렌더링을 지원하며, 게시글의 생성과 삭제 기능을 구현하여 기본적인 CRUD 작업을 실습할 수 있습니다. Node.js, Express, EJS의 기본적인 개념을 학습하고 실습할 수 있는 예제입니다.
 
 ## 프로젝트 구조
 
 ```plaintext
-express-ejs-basic-crud-template/
+node-express-ejs-crud-basic-example/
 │
 ├── node_modules/         # 프로젝트의 의존성이 저장된 디렉토리
 ├── public/               # 정적 파일 (CSS, JavaScript 등) 저장 디렉토리
@@ -45,7 +45,7 @@ express-ejs-basic-crud-template/
 2. 프로젝트 디렉토리로 이동합니다:
 
    ```bash
-   cd express-ejs-basic-crud-template
+   cd node-express-ejs-crud-basic-example
 
    ```
 
